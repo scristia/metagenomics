@@ -1,0 +1,10 @@
+\beamer@endinputifotherversion {3.20pt}
+\beamer@sectionintoc {1}{\scshape Introduction}{1}{0}{1}
+\beamer@sectionintoc {2}{\scshape Background}{2}{0}{2}
+\beamer@subsectionintoc {2}{1}{Biological Background}{2}{0}{2}
+\beamer@subsectionintoc {2}{2}{Existing Methods}{4}{0}{2}
+\beamer@subsectionintoc {2}{3}{Data}{5}{0}{2}
+\beamer@sectionintoc {3}{\scshape Bloom Filter}{6}{0}{3}
+\beamer@sectionintoc {4}{\scshape Markov Model}{9}{0}{4}
+\beamer@sectionintoc {5}{\scshape Bowtie}{11}{0}{5}
+\beamer@sectionintoc {6}{\scshape Ongoing work}{13}{0}{6}
