@@ -1,0 +1,198 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Simple Sectioned Essay Template
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing essay content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt]{article} % Default font size is 12pt, it can be changed here
+% Margin specification
+% Check http://en.wikibooks.org/wiki/LaTeX/Page_Layout for more info
+\usepackage[margin = 1in]{geometry}
+\usepackage[nottoc,notlof,notlot,numbib]{tocbibind}
+
+% Some misc and math packages
+% Check http://en.wikibooks.org/wiki/LaTeX/Mathematics for more info
+\usepackage{fancyhdr}
+\usepackage{manfnt}
+\usepackage{pgf}
+\usepackage{amsmath,amsthm,amssymb,natbib,graphicx}
+\usepackage{amsfonts}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\usepackage{bbm}
+\usepackage{float}
+\usepackage{mathrsfs} %mathscr{A}
+\usepackage{hyperref}
+\usepackage{pdfpages}
+
+% Color
+\usepackage{color}
+
+% For specifying the counter style of enumerate
+\usepackage{enumerate}
+
+\usepackage{geometry} % Required to change the page size to A4
+%\geometry{a4paper} % Set the page size to be A4 as opposed to the default US Letter
+
+\usepackage{graphicx} % Required for including pictures
+
+\usepackage{float} % Allows putting an [H] in \begin{figure} to specify the exact location of the figure
+\usepackage{wrapfig} % Allows in-line images such as the example fish picture
+
+\usepackage{parskip} % Space between paragraphs
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\linespread{1.5} % Line spacing
+
+\setlength\parindent{0pt} % Uncomment to remove all indentation from paragraphs
+
+\graphicspath{{./Pictures/}} % Specifies the directory where pictures are stored
+
+\newcommand{\iid}{\stackrel{\mathrm{iid}}{\sim}}
+
+% Page style definition
+\rfoot{\today}
+\begin{document}
+
+
+%------------------------------------------------
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\center % Center everything on the page
+ 
+%----------------------------------------------------------------------------------------
+%	HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+
+\textsc{\LARGE Johns Hopkins University}\\[1.5cm] % Name of your university/college
+\textsc{\Large Computational Genomics}\\[0.5cm] % Major heading such as course name
+\textsc{\large EN 600.639}\\[0.5cm] % Minor heading such as course title
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Classification of Metagenomic Reads}\\[0.4cm] % Title of your document
+\HRule \\[1.5cm]
+ 
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+Shuya \textsc{Chu}, \\  Stephen \textsc{Cristiano}, \\ Bing \textsc{He},\\  Zhou \textsc{Ye} % Your name
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Instructor:} \\
+Dr. Ben \textsc{Langmead} % Supervisor's Name
+\end{flushright}
+\end{minipage}\\[4cm]
+
+% If you don't want a supervisor, uncomment the two lines below and remove the section above
+%\Large \emph{Author:}\\
+%John \textsc{Smith}\\[3cm] % Your name
+
+%----------------------------------------------------------------------------------------
+%	DATE SECTION
+%----------------------------------------------------------------------------------------
+
+{\large \today}\\[3cm] % Date, change the \today to a set date if you want to be precise
+
+%----------------------------------------------------------------------------------------
+%	LOGO SECTION
+%----------------------------------------------------------------------------------------
+
+%\includegraphics{Logo}\\[1cm] % Include a department/university logo - this will require the graphicx package
+ 
+%----------------------------------------------------------------------------------------
+
+\vfill % Fill the rest of the page with whitespace
+ \end{titlepage}
+%------------------------------------------------
+\vspace{5 ex}
+\section{Abstract}
+In recent years, metagenomics has gained increased interest in the scientific community. With relevance to  public health, agriculture, biofuels, and marine biology [REFERENCE], it is important to understand the taxonomic composition of metagenomic samples and its functional impact it their respective ecosystems. In this project, we use simulated data to explore a variety of methods to taxonomically classify metagenomic reads to their correct position in a phylogenetic reference set. RESULTS
+
+
+\section{Introduction}
+The recent expansion of next generation sequencing technologies have greatly benefited our ability to study microbial communities [Reference]. Metagenomics, defined in 2005 as ``The application of modern genomics techniques to the study of communities of microbial organisms directly in their natural environments, bypassing the need for isolation and lab cultivation of individual species'' [\cite{Chen:2005dg}], has seen a surge of research efforts in recent years in diverse fields including public health, agriculture, biofuels, and marine biology, and efforts such as the Human Microbiome Project generating large quantities of metagenomic data. Despite this, computational methods are still needed for analyzing and making sense of these data in an accurate but efficient matter. 
+\par
+One important challenge is, given a set of metagenomic reads, to accurately classify the taxonomic composition of the reads. For example, a metagenomic human gut sample will contain many different microbial species. We wish to be able to classify each read to the correct phylogenetic location in a reference set and determine the presence and abundance of different microbial species in the sample. Adding to the challenge, many of the species will be closely related (belonging to the same genus, family etc) and in a microbial sample, many of the reads make come from \emph{de novo} genomes, \emph{ie} from species that have never been sequenced before and unknown to the scientific community. 
+\par
+In this project, we propose, implement, and compare three methods for the classification of metagenomic reads. In particular, we provide a Bloom filter approach, an approach based on Interpolated Markov Models, and an approach based using Bowtie to perform local alignment to reference genomes and classify using a novel algorithm. While similar methods exist, we also consider a number of ways in which we can improve upon these.
+\par
+To perform our analyses, we obtain reference genomes from RefSeq, a large collection of genomes maintained by the National Center for Biotechnology Institute (NCBI) [\cite{Pruitt:2009dg}] 
+\section{Related work}
+A large body of work has already been done on the phylogenetic classification of metagenomic reads. It's important to note that many of the early methods are only accurate for large sequence reads and fail at correctly classifying the short ($ \sim100$ bp) reads generated by next generation sequencers [\cite{Brady:2009dg}]. We briefly review a few of the more recent metagenomic classification methods.
+\subsection{PhymmBL}
+PhymmBL [\cite{Brady:2009dg}] uses an Interpolated Markov Model to phylogenetically classify genomic reads to genomes in RefSeq, a large collection of genomes. It is capable of performing classification at different levels of the phylogentic tree (species, genus, family etc). In addition to classification using an IMM, PhymmBL also uses BLAST for local alignment to classify. By applying a linear function of the scores from the IMM and BLAST, the authors report greater classification accuracy than either the IMM or BLAST alone. Though very accurate, PhymmBL suffers from extremely slow running time, due to using BLAST for local alignment. 
+
+\subsection{FACS}
+Fast Accurate Classification of Sequences (FACS) [CITATION] transforms the reference genomes to Bloom filters and query Bloom filters for exact matches. Bloom filters are an compact hash-based data structure which are used to quickly determine whether an element is a member of a set or not. In a trade-off for compactness and speed of look-up, Bloom filters come with a risk of giving false positives which must be controlled. FACS is implemented in PERL and achieves high speed, but is limited to using Bloom filters $<312 MB$ and does not have a scoring system optimized for classification. In a comparison of classification software, other authors have reported an inability to reproduce the results reported in the FACS paper [\cite{Bazinet:2012dg}].
+
+\subsection{MetaPhlAn}
+MetaPhlAn (Metagenomic Phylogenetic Analyis) [HUTTENHOWER] is a popular tool for metagenomic classification. 
+
+\section{Methods and software}
+To simulate our data, we
+\section{Results}
+
+\section{Conclusion}
+
+
+%------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
+\bibitem[Chen, Pacther (2005)]{Chen:2005dg}
+Chen K, Pachter L (2005). 
+\newblock Bioinformatics for Whole-Genome Shotgun Sequencing of Microbial Communities. 
+\newblock {\em PLoS Comput Biol}, 1(2): e24. doi:10.1371/journal.pcbi.0010024
+
+\bibitem[Brady, Salzberg (2009)]{Brady:2009dg}
+Brady A, Salzberg S (2009).
+\newblock Phymm and PhymmBL: metagenomic phylogenetic classification with interpolated Markov models.
+\newblock {\em Nature Methods} 6, 673 - 676 (2009) 
+
+\bibitem[Pruitt et al (2009)]{Pruitt:2009dg}
+Pruitt KD, Tatusova T, Klimke W, Maglott DR. 
+\newblock NCBI Reference Sequences: current status, policy and new initiatives. 
+\newblock {\em Nucleic Acids Res.} 2009 Jan; 37 (Database issue):D32-36.
+
+\bibitem[Bazinet, Cummings (2012)]{Bazinet:2012dg}
+Bazinet AL, Cummings MP (2012)
+\newblock A comparative evaluation of sequence classification programs
+\newblock {\em BMC Bioinformatics} 2012, 13:92
+
+\bibitem[Stranneheim et al (2010)]{Stranneheim:2010dg}
+Stranneheim H, Käller M,  Allander T,  Andersson B,  Arvestad L,  Lundeberg J 
+\newblock Classification of DNA sequences using Bloom filters
+\newblock {\em Bioinformatics} (2010) 26 (13): 1595-1600.
+
+\end{thebibliography}
+%----------------------------------------------------------------------------------------
+
+\end{document}
