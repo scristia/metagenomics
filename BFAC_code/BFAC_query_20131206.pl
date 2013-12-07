@@ -8,6 +8,7 @@
 # Loads query in FASTA format, K-mer length and Bloom Filters. Interrogates
 # queries against filters and classifies queries onto genomes. 
 # The algorithm loops trough all queries for one filter at a time. 
+# FACS: http://facs.scilifelab.se
 ########################################################################
 
 =pod

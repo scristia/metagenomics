@@ -7,6 +7,7 @@
 # original auhtor for BLOOM::FASTER: Dmitriy Ryaboy and Peter Alvaro
 # Builds Bloom filters with a given K-mer length, false positive rate
 # and reference in a FASTA format
+# link to FACS: http://facs.scilifelab.se
 #------------------------------------------
 
 =head1 SYNOPSIS
