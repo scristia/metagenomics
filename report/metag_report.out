@@ -1,13 +1,21 @@
-\BOOKMARK [1][-]{section.1}{Abstract}{}% 1
-\BOOKMARK [1][-]{section.2}{Introduction}{}% 2
-\BOOKMARK [1][-]{section.3}{Related work}{}% 3
-\BOOKMARK [2][-]{subsection.3.1}{PhymmBL}{section.3}% 4
-\BOOKMARK [2][-]{subsection.3.2}{FACS}{section.3}% 5
-\BOOKMARK [2][-]{subsection.3.3}{MetaPhlAn}{section.3}% 6
-\BOOKMARK [2][-]{subsection.3.4}{Bowtie}{section.3}% 7
-\BOOKMARK [1][-]{section.4}{Methods and software}{}% 8
-\BOOKMARK [2][-]{subsection.4.1}{Bloom filter}{section.4}% 9
-\BOOKMARK [2][-]{subsection.4.2}{Improvement with Bowtie2}{section.4}% 10
-\BOOKMARK [1][-]{section.5}{Results}{}% 11
-\BOOKMARK [1][-]{section.6}{Conclusion}{}% 12
-\BOOKMARK [1][-]{section.7}{References}{}% 13
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Related work}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{PhymmBL}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{FACS}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Bowtie}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Methods and software}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{Bloom Filter augmented Classification \(BFAC\)}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{Improvement with Bowtie2}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.3}{Interpolated Markov Model}{section.3}% 9
+\BOOKMARK [1][-]{section.4}{Results}{}% 10
+\BOOKMARK [2][-]{subsection.4.1}{Evaluation Method}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.2}{All Results}{section.4}% 12
+\BOOKMARK [1][-]{section.5}{Discussion}{}% 13
+\BOOKMARK [2][-]{subsection.5.1}{Bloom Filter augmented Classification \(BFAC\)}{section.5}% 14
+\BOOKMARK [2][-]{subsection.5.2}{Bowtie}{section.5}% 15
+\BOOKMARK [2][-]{subsection.5.3}{IMM}{section.5}% 16
+\BOOKMARK [2][-]{subsection.5.4}{Comparison of Three Methods}{section.5}% 17
+\BOOKMARK [1][-]{section.6}{Conclusion}{}% 18
+\BOOKMARK [1][-]{section.7}{References}{}% 19
+\BOOKMARK [2][-]{subsection.7.1}{Interpolated Markov Model}{section.7}% 20
+\BOOKMARK [2][-]{subsection.7.2}{IMM Parameter Learning}{section.7}% 21

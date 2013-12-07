@@ -1,3 +1,4 @@
 *.o
 *.so
 background/
+metagenome_project.tar.gz
