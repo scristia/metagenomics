@@ -96,7 +96,7 @@
 
 \begin{minipage}{0.4\textwidth}
 \begin{flushleft} \large
-\emph{Author:}\\
+\emph{Authors:}\\
 Shuya \textsc{Chu}, \\  Stephen \textsc{Cristiano}, \\ Bing \textsc{He},\\  Zhou \textsc{Ye} % Your name
 \end{flushleft}
 \end{minipage}
@@ -157,11 +157,27 @@ MetaPhlAn (Metagenomic Phylogenetic Analyis) [HUTTENHOWER] is a popular tool for
 Bowtie [\cite{Langmead:2009dg}] utilizes a Burrow-Wheeler Transform and an FM index to perform extremely fast alignment of short DNA reads to a reference genome. By performing local alignment of the reads to each of the reference genomes from a phylogenetic tree, and using an appropriate scoring system, Bowtie can be adapted for classification of metagenomic reads. 
 
 \section{Methods and software}
-We obtain our reference genomes from RefSeq, obtained from the NCBI. Due to the vast size of RefSeq, we initially considered only the phylum \emph{Proteobacterium}, but even that exceeded our memory limits. For this reason, we decided to use for our reference set the genomes from \emph{Escherichia coli} (strain K-12 substain. DH10B) and  {\bf[BDELLO GENOME]}. To simulate our data, we use the software MetaSim [\cite{Richter:2008dg}] which will generate metagenomic reads into a FASTA file given a set of reference genomes.
+We obtain our reference genomes from RefSeq, obtained from the NCBI. Due to the vast size of RefSeq, we initially considered only the phylum \emph{Proteobacterium}, but even that exceeded our memory limits. For this reason, we decided to use comparisons of the methods for our reference set the genomes from \emph{Escherichia coli} (strain K-12 substain. DH10B) and  {\bf[BDELLO GENOME]}. To simulate our data, we use the software MetaSim [\cite{Richter:2008dg}] which will generate metagenomic reads into a FASTA file given a set of reference genomes.
 \par
+As the main purpose of the Bowtie method was to develop an algorithm that will not have align to every genome in a reference set, we also considered 15 genomes from \emph{Proteobacterium} but the same simulated reads. However, the comparisons with the other methods were still conducted only on the two previously mentioned reference genomes.
 \subsection{Bloom filter}
 Our first method was to create a Bloom filter for each reference genome and query the reads to them. 
+
+\subsection{Improvement with Bowtie2}
+Bowtie2 is an ultrafast aligner using FM index. It is particularly good at aligning reads of about 50 up to 100s or 1,000s of characters. Since our simulate testing data is around 100-200 long, using Bowtie2 will lead to fast aligning.
+\par
+The idea for improvement is by skipping some unnecessary alignment between the test data and reference, identifying the species for test data will be much more fast. Like what we did in the Boyer-Moore method in class, we use results from comparisons to skip future alignments that definitely won't match. To be more specific,  if we got a really low score when aligning the test data with one species, it means the sample is definitely not from this species, thus we can skip the whole species from the same genus. For example, if we know this sample definitely does not belong to \emph{Canis}, instead of checking whether it's \emph{Canis lupus}, we can check whether it's \emph{Cuon alpinus} from the genus of \emph{Cuon}.
+\par
+First we construct a tree structure to describe the taxonomy relation between the reference in python. For each node, node.data represent directory path of this reference, parent and children is directory path for its {\bf XXXX}. 
+\par
+Then by running Bowtie2, we will have scores which describe the similarity between the sample data and reference. If scores is really low, in other words, we have enough confidence to say the sample is not from this species, we skip the whole genus this reference species belongs to. If scores is not that bad, we will go through all the species in this genus to determine which species it has most similarity with.  
+\par
+Threshold here is very important. We didn't come up with a fixed expression to calculate it by the due date. We extract 30 species from 20 genus from the reference set and set the threshold after observing the result from those alignments. Also, we used the average score from the scores of 1000 test sequence in the .fna file.
+\par
+In order to run the code, please change the value of 'projectpath' to the actual path that 'AAA.zip' you extract to. And also, make sure inside the 'projectpath', there is a /data/index folder and a /bowtie2-2.1.0 folder.
+
 \section{Results}
+After running \verb|bowtie_with_skipping.py| and \verb|without_skipping|, we can tell with {\bf X species in X genus, skipping method is X times faster}.
 
 \section{Conclusion}
 In our project, we implemented and compared three methods for the phylogenetic classification of metagenomic reads. Under our simulated data, 
