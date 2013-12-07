@@ -1,0 +1,38 @@
+# Stephen Cristiano, Bing He
+# 2013-12-06
+# 639 Final Project: BFAC
+# NOTE: all code and data are included
+
+#------------------------------------------------------------
+# main program
+#------------------------------------------------------------
+The main program includes two perl scripts and one R script
+1. BFAC_build_20131206.pl # for bulding bloom filter
+	- BFAC_build_20131206.sh # command line run for 1, 
+							 # please check correctness of relative file path
+							 # input (reference genomes) are also included here
+2. BFAC_query_20131206.pl # FOR query bloom filter
+	- BFAC_query_20131206.sh # command line run for 2
+							 # please check correctness of relative file path
+							 # input (reference genomes) are also included here
+3. BFAC_summary_20131206.r # produce summary stats
+
+#------------------------------------------------------------
+# data
+#------------------------------------------------------------
+1. simdata contains simulated data with MetaSim,
+	NC_mixed_005363_010473-454.fna is a 10000 reads 
+	with 5000 from Ecoli and 5000 from Bdello with 454 error model.
+	Average length of reads ~200 bp
+2. Bdellovibrio_bacteriovorus_HD100_uid61595, 
+	Escherichia_coli_K_12_substr__DH10B_uid58979
+	Escherichia_coli_K_12_substr__MDS42_uid193705 contains reference genomes
+	for three types of bacteria
+3. NC_005363.1.obj, NC_010473.1.obj, and NC_020518.1.obj are bloom filters 
+	built for the reference genomes in 2, 
+	which are output from BFAC_build_20131206.pl
+4. matchscores from querying three bloom filters 
+	with reads in NC_mixed_005363_010473-454.fna,
+	output from BFAC_query_20131206.pl
+	
+	
