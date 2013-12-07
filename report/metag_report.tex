@@ -87,7 +87,7 @@
 %----------------------------------------------------------------------------------------
 
 \HRule \\[0.4cm]
-{ \huge \bfseries Classification of Metagenomic Reads}\\[0.4cm] % Title of your document
+{ \huge \bfseries Augmenting Phylogenetic Classification of Metagenomic Reads}\\[0.4cm] % Title of your document
 \HRule \\[1.5cm]
  
 %----------------------------------------------------------------------------------------
@@ -154,7 +154,7 @@ Fast Accurate Classification of Sequences (FACS) [CITATION] transforms the refer
 MetaPhlAn (Metagenomic Phylogenetic Analyis) [HUTTENHOWER] is a popular tool for metagenomic classification. 
 
 \subsection{Bowtie}
-Bowtie [CITATION] utilizes a Burrow-Wheeler Transform and an FM index to perform extremely fast alignment of short DNA reads to a reference genome. By performing local alignment of the reads to each of the reference genomes from a phylogenetic tree, and using an appropriate scoring system, Bowtie can be adapted for classification of metagenomic reads. 
+Bowtie [\cite{Langmead:2009dg}] utilizes a Burrow-Wheeler Transform and an FM index to perform extremely fast alignment of short DNA reads to a reference genome. By performing local alignment of the reads to each of the reference genomes from a phylogenetic tree, and using an appropriate scoring system, Bowtie can be adapted for classification of metagenomic reads. 
 
 \section{Methods and software}
 We obtain our reference genomes from RefSeq, obtained from the NCBI. Due to the vast size of RefSeq, we initially considered only the phylum \emph{Proteobacterium}, but even that exceeded our memory limits. For this reason, we decided to use for our reference set the genomes from \emph{Escherichia coli} (strain K-12 substain. DH10B) and  {\bf[BDELLO GENOME]}. To simulate our data, we use the software MetaSim [\cite{Richter:2008dg}] which will generate metagenomic reads into a FASTA file given a set of reference genomes.
@@ -164,8 +164,13 @@ Our first method was to create a Bloom filter for each reference genome and quer
 \section{Results}
 
 \section{Conclusion}
-
-
+In our project, we implemented and compared three methods for the phylogenetic classification of metagenomic reads. Under our simulated data, 
+\par
+For future work, we would ideally run our methods on reference genomes from the full RefSeq and using simulated reads from a larger clade in the tree. While we aimed to do so for our project, we found that we found that the limitations on cluster we were using were too stringent and we had to vastly scale down the scale of our reference set. In particular, we believe that the IMM method will improve as we scale up the data and the number of reference genomes. We also would like to scale our comparisons to real data instead of simulated reads, especially a dataset that has been well studied and we have some idea of what the true classifications should be. It's also important to compare our methods to the existing methods. While we believe we sufficiently improved upon existing methods, we were unable to get existing software running on the cluster, aside from FACS. 
+\par
+Other things we would like to test is the ability of our methods to detect \emph{de novo} reads. A real metagenomics sample will have reads from many bacteria which have never been discovered, which we would like our methods to classify to the correct genus, but identify as being from an unknown genome. One easy way we can explore this is by simulating reads from a reference set of genomes, and then classify against the reference set multiple times using a cross validation procedure with one reference genome left out from each classification.
+\par
+In summary, we identify three methods for phylogenetic classification for metagenomics. While our initial results  look very promising, we need to scale up the size of our simulations and set of reference genomes to fully quantify the accuracy, sensitivity, and specificity of these methods. We remain hopeful that our methods will perform well on a more realistic simulation and can be applied to real metagenomics data. 
 %------------------------------------------------
 
 %----------------------------------------------------------------------------------------
@@ -198,12 +203,15 @@ Stranneheim H, Käller M,  Allander T,  Andersson B,  Arvestad L,  Lundeberg J
 \newblock Classification of DNA sequences using Bloom filters
 \newblock {\em Bioinformatics} (2010) 26 (13): 1595-1600.
 
-%\bibitem[Langmead et al (2010)
+\bibitem[Langmead et al (2010)]{Langmead:2009dg}
+Langmead B,  Trapnell C,  Pop M,  Salzberg S
+\newblock Ultrafast and memory-efficient alignment of short DNA sequences to the human genome.
+\newblock {\em Genome Biology} (2010) 10:R25
 
 \bibitem[Ricther et al (2008)]{Richter:2008dg}
-Richter DC, Ott F, Auch AF, Schmid R, Huson DH (2008)
+Richter DC, Ott F, Auch AF, Schmid R, Huson DH 
 \newblock MetaSim—A Sequencing Simulator for Genomics and Metagenomics. 
-\newblock PLoS ONE 3(10): e3373. doi:10.1371/journal.pone.0003373
+\newblock PLoS ONE (2008) 3(10): e3373. doi:10.1371/journal.pone.0003373
 \end{thebibliography}
 %----------------------------------------------------------------------------------------
 
