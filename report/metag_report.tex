@@ -153,8 +153,14 @@ Fast Accurate Classification of Sequences (FACS) [CITATION] transforms the refer
 \subsection{MetaPhlAn}
 MetaPhlAn (Metagenomic Phylogenetic Analyis) [HUTTENHOWER] is a popular tool for metagenomic classification. 
 
+\subsection{Bowtie}
+Bowtie [CITATION] utilizes a Burrow-Wheeler Transform and an FM index to perform extremely fast alignment of short DNA reads to a reference genome. By performing local alignment of the reads to each of the reference genomes from a phylogenetic tree, and using an appropriate scoring system, Bowtie can be adapted for classification of metagenomic reads. 
+
 \section{Methods and software}
-To simulate our data, we
+We obtain our reference genomes from RefSeq, obtained from the NCBI. Due to the vast size of RefSeq, we initially considered only the phylum \emph{Proteobacterium}, but even that exceeded our memory limits. For this reason, we decided to use for our reference set the genomes from \emph{Escherichia coli} (strain K-12 substain. DH10B) and  {\bf[BDELLO GENOME]}. To simulate our data, we use the software MetaSim [\cite{Richter:2008dg}] which will generate metagenomic reads into a FASTA file given a set of reference genomes.
+\par
+\subsection{Bloom filter}
+Our first method was to create a Bloom filter for each reference genome and query the reads to them. 
 \section{Results}
 
 \section{Conclusion}
@@ -192,6 +198,12 @@ Stranneheim H, Käller M,  Allander T,  Andersson B,  Arvestad L,  Lundeberg J
 \newblock Classification of DNA sequences using Bloom filters
 \newblock {\em Bioinformatics} (2010) 26 (13): 1595-1600.
 
+%\bibitem[Langmead et al (2010)
+
+\bibitem[Ricther et al (2008)]{Richter:2008dg}
+Richter DC, Ott F, Auch AF, Schmid R, Huson DH (2008)
+\newblock MetaSim—A Sequencing Simulator for Genomics and Metagenomics. 
+\newblock PLoS ONE 3(10): e3373. doi:10.1371/journal.pone.0003373
 \end{thebibliography}
 %----------------------------------------------------------------------------------------
 

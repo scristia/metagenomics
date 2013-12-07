@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  6 DEC 2013 17:48
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  6 DEC 2013 20:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -724,41 +724,44 @@ l.143 \par
            [1] [2] [3]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¤ in font cmr12!
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 198.
- [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 198.
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ” in font cmr12!
+
+Underfull \hbox (badness 2980) in paragraph at lines 204--207
+[]\OT1/cmr/m/n/12 Richter DC, Ott F, Auch AF, Schmid R, Hu-son DH (2008)  MetaS
+imA Se-
+ []
+
+[4]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 210.
+ [5]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 210.
  (./metag_report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 198.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 198.
-
-
-Package rerunfilecheck Warning: File `metag_report.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `metag_report.out':
-(rerunfilecheck)             Before: 70DA3435B043E559794E603417046BFD;433
-(rerunfilecheck)             After:  D7581BD25D98C491FBFBB9898594C92B;492.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 198.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 210.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 210.
+Package rerunfilecheck Info: File `metag_report.out' has not changed.
+(rerunfilecheck)             Checksum: D056FE8B975A6F7D664D0C0E77AD621C;610.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 210.
  ) 
 Here is how much of TeX's memory you used:
- 14418 strings out of 493488
- 241043 string characters out of 3141326
- 410697 words of memory out of 3000000
- 17415 multiletter control sequences out of 15000+200000
- 12494 words of font info for 47 fonts, out of 3000000 for 9000
+ 14429 strings out of 493488
+ 241225 string characters out of 3141326
+ 410730 words of memory out of 3000000
+ 17422 multiletter control sequences out of 15000+200000
+ 12801 words of font info for 48 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 49i,6n,53p,821b,445s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 49i,6n,53p,821b,453s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 ></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
 </usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
 usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
 sr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on metag_report.pdf (5 pages, 87177 bytes).
+Output written on metag_report.pdf (6 pages, 90713 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
- 99 compressed objects within 1 object stream
- 20 named destinations out of 1000 (max. 500000)
- 85 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 132 PDF objects out of 1000 (max. 8388607)
+ 116 compressed objects within 2 object streams
+ 24 named destinations out of 1000 (max. 500000)
+ 109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

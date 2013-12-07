@@ -4,7 +4,9 @@
 \BOOKMARK [2][-]{subsection.3.1}{PhymmBL}{section.3}% 4
 \BOOKMARK [2][-]{subsection.3.2}{FACS}{section.3}% 5
 \BOOKMARK [2][-]{subsection.3.3}{MetaPhlAn}{section.3}% 6
-\BOOKMARK [1][-]{section.4}{Methods and software}{}% 7
-\BOOKMARK [1][-]{section.5}{Results}{}% 8
-\BOOKMARK [1][-]{section.6}{Conclusion}{}% 9
-\BOOKMARK [1][-]{section.7}{References}{}% 10
+\BOOKMARK [2][-]{subsection.3.4}{Bowtie}{section.3}% 7
+\BOOKMARK [1][-]{section.4}{Methods and software}{}% 8
+\BOOKMARK [2][-]{subsection.4.1}{Bloom filter}{section.4}% 9
+\BOOKMARK [1][-]{section.5}{Results}{}% 10
+\BOOKMARK [1][-]{section.6}{Conclusion}{}% 11
+\BOOKMARK [1][-]{section.7}{References}{}% 12
